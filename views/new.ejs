@@ -1,0 +1,16 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+    <h3>Write New Chat</h3>
+    <div class="bodys">
+   <form method="post" action="/chats">
+    <input placeholder="who are your?" name="from"/>
+    <br/><br/>
+    <textarea name="message" >Write your message here</textarea>
+    <br/>
+    <input placeholder="add receiver" name="to"/>
+    <br/><br/>
+    <button>Create Chat</button>
+   </form>
+</div>
+</body>
+</html>

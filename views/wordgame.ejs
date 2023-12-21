@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    input {
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    #output {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+
+    #message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Word Guessing Game</h1>
+
+<p>Guess the word:</p>
+
+<div id="output"></div>
+
+<input type="text" id="guessInput" maxlength="1">
+<button onclick="checkGuess()">Submit Guess</button>
+
+<p id="message"></p>
+
+<script>
+  // Array of words to choose from
+  const words = ["javascript", "programming", "web", "developer", "coding", "challenge"];
+
+  // Select a random word from the array
+  let selectedWord = words[Math.floor(Math.random() * words.length)];
+
+  // Array to store the guessed letters
+  let guessedLetters = [];
+
+  // Function to display the current state of the word
+  function displayWord() {
+    let display = '';
+    for (let letter of selectedWord) {
+      if (guessedLetters.includes(letter)) {
+        display += letter + ' ';
+      } else {
+        display += '_ ';
+      }
+    }
+    document.getElementById('output').innerHTML = display;
+  }
+
+  // Function to check the guessed letter
+  function checkGuess() {
+    let guessInput = document.getElementById('guessInput').value.toLowerCase();
+
+    // Check if the input is a single letter
+    if (guessInput.length !== 1 || !/[a-z]/.test(guessInput)) {
+      document.getElementById('message').innerText = 'Please enter a valid single letter.';
+      return;
+    }
+
+    // Check if the letter has already been guessed
+    if (guessedLetters.includes(guessInput)) {
+      document.getElementById('message').innerText = 'You already guessed that letter.';
+      return;
+    }
+
+    // Add the guessed letter to the array
+    guessedLetters.push(guessInput);
+
+    // Check if the guessed letter is in the word
+    if (selectedWord.includes(guessInput)) {
+      document.getElementById('message').innerText = 'Good guess!';
+    } else {
+      document.getElementById('message').innerText = 'Incorrect guess.';
+    }
+
+    // Display the updated word
+    displayWord();
+
+    // Check if the entire word has been guessed
+    if (!displayWord().includes('_')) {
+      document.getElementById('message').innerText = 'Congratulations! You guessed the word!';
+    }
+
+    // Clear the input field
+    document.getElementById('guessInput').value = '';
+  }
+
+  // Display the initial state of the word
+  displayWord();
+</script>
+
+</body>
+</html>

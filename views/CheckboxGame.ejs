@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate")%>
+<style>
+    body {
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(to right, rgb(9, 9, 226), rgb(132, 132, 231));
+       color: #fff;
+  
+    
+  }
+  </style>
+
+<body>
+    <h1>Checkbox Game</h1>
+
+    <input type="checkbox" id="checkbox1">
+    <label for="checkbox1">Checkbox 1</label>
+
+    <input type="checkbox" id="checkbox2">
+    <label for="checkbox2">Checkbox 2</label>
+
+    <input type="checkbox" id="checkbox3">
+    <label for="checkbox3">Checkbox 3</label>
+
+    <button onclick="checkGame()">Check Game</button>
+
+    <script>
+        function checkGame() {
+            // Get all checkboxes
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+            // Check if all checkboxes are checked
+            const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+
+            if (allChecked) {
+                alert('Congratulations! You completed the game.');
+            } else {
+                alert('Keep trying! Not all checkboxes are checked.');
+            }
+        }
+    </script>
+</body>
+
+
+
+

@@ -1,0 +1,72 @@
+/* Reset some default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color to the body */
+body {
+    background-color: #f0f0f0;
+}
+
+/* Style the heading */
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Style the card container */
+.card1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Style the individual card */
+.card {
+    width: 18rem;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the card image */
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Style the card body */
+.card-body {
+    text-align: center;
+}
+
+/* Style the card title */
+.card-title {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Style the card text */
+.card-text {
+    color: #555;
+}
+
+/* Style the button */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Hover effect on the button */
+.btn-primary:hover {
+    background-color: #0056b3;
+}

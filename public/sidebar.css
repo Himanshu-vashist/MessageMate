@@ -1,0 +1,140 @@
+.header{
+    width: 100%;
+    height: 100%;
+    background-image: url(https://imgs.search.brave.com/ainrXUniZ2xlUDVm9K3UruGFItKaHC2SGHDFhyhR_-A/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/c29saWRiYWNrZ3Jv/dW5kcy5jb20vaW1h/Z2VzLzI1NjB4MTQ0/MC8yNTYweDE0NDAt/Ymx1ZS1zb2xpZC1j/b2xvci1iYWNrZ3Jv/dW5kLmpwZw);
+    background-position: center;
+    background-size: cover;
+  }
+  
+  
+  
+  .side-nav{
+    width: 100px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: width 0.4s;
+  }
+  
+  .user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+  }
+  .user div{
+    display: none;
+  }
+  .user h2{
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  
+  .user-img{
+    width: 40px;
+    border-radius: 50%;
+    margin: auto;
+  }
+  .star-img{
+    width: 20px;
+    display: none;
+  }
+  
+  ul{
+    list-style: none;
+    padding: 0 15px;
+  }
+  
+  ul li{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  ul li img{
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  ul li p{
+    white-space: nowrap;
+    display: none;
+  }
+  
+  .side-nav:hover{
+    width: 250px;
+  }
+  
+  .side-nav:hover .user div{
+    display: block;
+  
+  }
+  .side-nav:hover .user{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+  }
+  
+  .side-nav:hover .star-img{
+    display: block;
+  }
+  .side-nav:hover .user-img{
+    margin: 0;
+  }
+  
+  .side-nav:hover ul li p{
+    display: block;
+  }
+  .side-nav:hover ul li img{
+    margin-right: 10px;
+  }
+  
+  .side-nav:hover ul li{
+    justify-content: flex-start;
+  }
+  
+  .bodys{
+    margin-left: auto;
+   padding: 20px;
+   padding-left: 25%;
+  }
+
+  .message{
+    background-color:pink;
+    color: black;
+    border-radius: 20%;
+    padding-left: 10%;
+    margin-right: 10%;
+  
+    display: block;
+    
+  }
+  .chat{
+    background-color: green;
+    display: inline-block;
+    border-radius: 30px;
+    padding-left: 20%;
+    margin-inline-end: 50%;
+    content: center;
+
+  }
+  .img{
+    border: 20px;
+    
+  }

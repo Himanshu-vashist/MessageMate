@@ -1,0 +1,47 @@
+<% layout("/layouts/boilerplate")%>
+<style>
+  body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, rgb(9, 9, 226), rgb(132, 132, 231));
+     color: #fff;
+
+  
+}
+</style>
+<body>
+<h1>All Chats!..</h1>
+<% for(let chat of chats){ %>
+
+<div class="card mb-3" style="max-width: 1000px;">
+   <div class="row g-0">
+     <div class="col-md-4">
+      
+
+       <img src="https://imgs.search.brave.com/gV6Xy99WsNTWpgT2KUNxopKhP45u8QMrrL2DGi5HYxg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzE1Lzg0LzQz/LzM2MF9GXzIxNTg0/NDMyNV90dFg5WWlJ/SXllYVI3TmU2RWFM/TGpNQW15NEd2UEM2/OS5qcGc" class="rounded float-start" alt="...">
+     </div>
+     <div class="col-md-8">
+       <div class="card-body">
+         <h5 class="card-title"><b>From : </b><i><%= chat.from %></i></h5>
+         <p class="card-text"> <h3><%= chat.message %></h3>
+            <form method="get" action="/chats/<%= chat._id %>/edit">
+              <button>Edit</button> 
+           </form></p>
+           <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
+            <button>Delete</button> 
+         </form>
+           <h5><b>Received By :</b> <i><%= chat.to %></i></h5>
+         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+         <br/>
+         
+        
+       </div>
+       
+     </div>
+   </div>
+ </div>
+ <% } %>
+
+</body>
+
+ 

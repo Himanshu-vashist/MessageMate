@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #result {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Guess the Number!</h1>
+<p>Guess a number between 1 and 10:</p>
+<input type="number" id="userGuess" min="1" max="10">
+<button onclick="checkGuess()">Submit Guess</button>
+<p id="result"></p>
+
+<script>
+  // Generate a random number between 1 and 10
+  const secretNumber = Math.floor(Math.random() * 10) + 1;
+  let attempts = 0;
+
+  function checkGuess() {
+    // Get user's guess
+    const userGuess = document.getElementById('userGuess').value;
+
+    // Validate the input
+    if (userGuess < 1 || userGuess > 10 || isNaN(userGuess)) {
+      alert('Please enter a valid number between 1 and 10.');
+      return;
+    }
+
+    // Increment attempts
+    attempts++;
+
+    // Check if the guess is correct
+    if (userGuess == secretNumber) {
+      document.getElementById('result').innerHTML = `Congratulations! You guessed the number ${secretNumber} in ${attempts} attempts.`;
+    } else {
+      document.getElementById('result').innerHTML = `Try again. ${userGuess} is not the correct number.`;
+    }
+  }
+</script>
+
+</body>
+</html>

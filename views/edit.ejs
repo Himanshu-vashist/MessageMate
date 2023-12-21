@@ -1,0 +1,17 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+    <p class="font-monospace"><h3>Edit your chat : <%= chat._id %></h3></p>
+     
+<p class="text-body-secondary">This chat was sent from <%= chat.from %> to <%= chat.to %></p>
+
+<div class="mb-3">
+    <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+    <textarea name="message"class="form-control" id="exampleFormControlTextarea1" rows="3"><%= chat.message %></textarea>
+    <button type="submit">edit</button>  
+</form>
+</div>
+
+</body>
+
+
